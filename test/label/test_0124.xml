@@ -1,0 +1,26 @@
+<annotation>
+	<folder>test</folder>
+	<filename>test_0124.jpg</filename>
+	<path>C:\Users\lenovo\Desktop\red_shagai_full _1\test\test_0124.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1920</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>shagai</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1164</xmin>
+			<ymin>593</ymin>
+			<xmax>1446</xmax>
+			<ymax>783</ymax>
+		</bndbox>
+	</object>
+</annotation>
