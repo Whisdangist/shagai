@@ -1,21 +1,23 @@
 import os
 from lxml import etree
 
-file = open("fddb/a.txt", "w")
-file_list = open("fddb/l.txt", "w")
-# for file in os.listdir("test"):
-for ii in range(1, 42):
-	img = "test/test_%.3d" % ii
-	elems = etree.parse(img+".xml")
+annotations = open("fddb/a.txt", "w")
+images_list = open("fddb/l.txt", "w")
+label_path = "test/label/"
+for label in os.listdir(label_path):
+	elems = etree.parse(label_path+label)
 	boxes = elems.xpath("//bndbox")
-	print >> file, img
-	print >> file_list, img
-	print >> file, len(boxes)
+	folder = elems.xpath("folder")[0].text
+	filename = elems.xpath("filename")[0].text.strip('.jpg')
+	filepath = folder + "/" + filename
+	print >> annotations, filepath
+	print >> images_list, filepath
+	print >> annotations, len(boxes)
 	for box in boxes:
 		x = int(box.xpath("xmin")[0].text)
 		y = int(box.xpath("ymin")[0].text)
 		w = int(box.xpath("xmax")[0].text) - x
 		h = int(box.xpath("ymax")[0].text) - y
-		print >> file, x, y, w, h, 1
-file.close()
-file_list.close()
+		print >> annotations, x, y, w, h, 120
+annotations.close()
+images_list.close()
