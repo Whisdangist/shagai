@@ -1,6 +1,6 @@
 import os
 
-dir_ = "pos"
+dir_ = "test"
 ii = 1
 namelist = []
 
