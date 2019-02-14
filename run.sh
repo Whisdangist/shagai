@@ -1,0 +1,1 @@
+opencv_traincascade -data data -vec pos.vec -bg neg.txt -numPos 900 -numNeg 4500 -stageType HAAR -w 40 -h 30 -precalcValBufSize 20480 -precalcIdxBufSize 20480  -maxFalseAlarmRate 0.5  -numStages 20
